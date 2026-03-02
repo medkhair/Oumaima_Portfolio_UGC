@@ -1,42 +1,125 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+/*
+ * Copyright © 2025 Medkhair.
+ * This software and its source code are owned by Medkhair.
+ * Unauthorized copying, modification, distribution, or use
+ * of this code, via any medium, is strictly prohibited.
+ */
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/***** General CSS *****/
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
+    @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
 
-.card {
-  padding: 2em;
-}
+    @font-face {
+        font-family: "Clash Display Variable";
+        src: url("https://db.onlinewebfonts.com/t/2fcd723a1a012506da3928146b19364d.eot");
+        src: url("https://db.onlinewebfonts.com/t/2fcd723a1a012506da3928146b19364d.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/2fcd723a1a012506da3928146b19364d.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/2fcd723a1a012506da3928146b19364d.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/2fcd723a1a012506da3928146b19364d.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/2fcd723a1a012506da3928146b19364d.svg#Clash Display Variable")format("svg");
+    }
+    :root {
+        --Medkhair-color-primary: #0A192F;
+        --Medkhair-color-secondary: #64FFDA;
+        --Medkhair-color-tercairy: #0B1E34;
+        --Medkhair-color-quaternary: #fff;
+    }
+    html{
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
 
-.read-the-docs {
-  color: #888;
-}
+    body {
+        margin: 0;
+        font-family: "Sora", sans-serif;
+        background-color: var(--Medkhair-color-primary);
+        color: #fff;
+        line-height: 1.1;
+    }
+
+    .inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .inner > * {
+        flex: 1;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: "Clash Display Variable", sans-serif;
+        font-weight: 600;
+    }
+    p{
+        font-weight: 300;
+        color: #E2E8F0;
+    }
+    a{
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .button {
+        color: var(--Medkhair-color-primary);
+        border: none;
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: background-color 0.4s ease;
+        font-weight: 600;
+    }
+    .button.primary{
+        background-color: var(--Medkhair-color-secondary);
+        color: var(--Medkhair-color-primary);
+        border: 2px solid var(--Medkhair-color-secondary);
+    }
+    .button.secondary{
+        background-color: transparent;
+        color: var(--Medkhair-color-secondary);
+        border: 2px solid var(--Medkhair-color-secondary);
+    }
+    .button.primary:hover {
+        background-color: var(--Medkhair-color-primary);
+        color: var(--Medkhair-color-secondary);
+        border: 2px solid var(--Medkhair-color-secondary);
+    }
+    .button.secondary:hover {
+        background-color: var(--Medkhair-color-secondary);
+        color: var(--Medkhair-color-primary);
+        border: 2px solid var(--Medkhair-color-secondary);
+    }
+    .section-title{
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    .section-header hr{
+        width: 100px;
+        border: 2px solid var(--Medkhair-color-secondary);
+        margin: 10px auto 10px auto;
+    }
+    .section-header p{
+        font-size: 18px;
+        text-align: center;
+    }
+    @media (max-width: 768px) {
+        .inner {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .inner > * {
+            margin-bottom: 20px;
+        }
+        .section-title{
+            font-size: 28px;
+        }
+    }
+
+/***** End of General CSS *****/
