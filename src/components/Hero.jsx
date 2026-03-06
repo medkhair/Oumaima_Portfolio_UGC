@@ -52,7 +52,7 @@ function Hero({person}){
                     <div className="hero-image">
                         <img src={heroImage} alt={`${person.firstName} ${person.lastName}`} />
                         
-                        {/* Papillon Rose */}
+                        {/* Papillon Rose 
                         <div className="butterfly-container butterfly-1">
                             <svg className="butterfly" viewBox="0 0 100 100" width="60" height="60">
                                 <g className="wings">
@@ -62,8 +62,9 @@ function Hero({person}){
                                 <ellipse cx="50" cy="50" rx="5" ry="15" fill="#333"/>
                             </svg>
                         </div>
+                        */}
 
-                        {/* Papillon Violet */}
+                        {/* Papillon Violet 
                         <div className="butterfly-container butterfly-2">
                             <svg className="butterfly" viewBox="0 0 100 100" width="50" height="50">
                                 <g className="wings">
@@ -73,8 +74,8 @@ function Hero({person}){
                                 <ellipse cx="50" cy="50" rx="5" ry="15" fill="#333"/>
                             </svg>
                         </div>
-
-                        {/* Papillon Corail */}
+                            */}
+                        {/* Papillon Corail 
                         <div className="butterfly-container butterfly-3">
                             <svg className="butterfly" viewBox="0 0 100 100" width="55" height="55">
                                 <g className="wings">
@@ -84,6 +85,7 @@ function Hero({person}){
                                 <ellipse cx="50" cy="50" rx="5" ry="15" fill="#333"/>
                             </svg>
                         </div>
+                        */}
                     </div>
                 </Inner>
             </section>
