@@ -1,6 +1,6 @@
 import Inner from './Inner';
 
-import heroImage from '../../public/images/oumaima/DSC01844.jpg';
+import heroImage from '../../public/images/oumaima/DSC01818.jpg';
 
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
@@ -44,9 +44,11 @@ function Hero({person}){
                             </button>
                         </div>
                         <div className="buttons social-icons">
-                            <a href="https://github.com/medkhair" target="_blank" className="button secondary"><i className="bi bi-tiktok" ></i></a>
-                            <a href="https://ma.linkedin.com/in/mohammed-khair-souiba-32a59632b" target="_blank" className="button secondary"><i className="bi bi-linkedin" ></i></a>
                             <a href="https://github.com/medkhair" target="_blank" className="button secondary"><i className="bi bi-instagram" ></i></a>
+
+                            <a href="https://github.com/medkhair" target="_blank" className="button secondary"><i className="bi bi-tiktok" ></i></a>
+
+                            <a href="https://ma.linkedin.com/in/mohammed-khair-souiba-32a59632b" target="_blank" className="button secondary"><i className="bi bi-linkedin" ></i></a>
                         </div>
                     </div>
                     <div className="hero-image">
