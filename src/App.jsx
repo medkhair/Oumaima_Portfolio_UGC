@@ -1,9 +1,8 @@
-
 import './App.css'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Hero from './components/Hero'
-import Portfolio from './components/portfolio'
+import Portfolio from './components/Portfolio'
 import Propos from './components/Propos'
 import Services from './components/Services'
 import { categoriesSections, person, services } from './services/data'
