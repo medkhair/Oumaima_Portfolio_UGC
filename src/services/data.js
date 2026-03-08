@@ -39,7 +39,7 @@ export const categories = [
 export const categoriesSections = [
     {
         title: "Projets Vidéo & Contenu Digital",
-        subTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        subTitle: "Formats vidéo conçus pour renforcer la présence digitale et capter l’attention sur les réseaux.",
         content:[
             "1171455531",
             "1171455555",
@@ -49,7 +49,7 @@ export const categoriesSections = [
     },
     {
         title: "Mini Vlogs",
-        subTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        subTitle: "Moments du quotidien transformés en récits courts et authentiques pour créer une connexion naturelle avec l’audience.",
         content:[
             "1171455531",
             "1171455555",
@@ -59,7 +59,7 @@ export const categoriesSections = [
     },
     {
         title: "Un-boxings",
-        subTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        subTitle: "Découvertes produits filmées pour mettre en valeur l’expérience, les détails et les premières impressions.",
         content:[
             "1171455531",
             "1171455555",
@@ -69,7 +69,7 @@ export const categoriesSections = [
     },
     {
         title: "Photos",
-        subTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        subTitle: "Sélection de visuels mettant en avant l’esthétique, la mise en scène et l’identité des marques.",
         content:[
            "DSC01755.jpg",
            "bg-image.jpg",

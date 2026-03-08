@@ -1,7 +1,9 @@
 
 import './App.css'
+import Contact from './components/Contact'
 import Hero from './components/Hero'
 import Portfolio from './components/portfolio'
+import Propos from './components/Propos'
 import Services from './components/Services'
 import { categoriesSections, person, services } from './services/data'
 
@@ -12,7 +14,8 @@ function App() {
       <Hero person={person} />
       <Services services={services} />
       <Portfolio categories={categoriesSections} />
-      <Services services={services} />
+      <Propos />
+      <Contact person={person} />
     </>
   )
 }
