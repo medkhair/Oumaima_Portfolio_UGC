@@ -40,21 +40,44 @@ export const categoriesSections = [
     {
         title: "Projets Vidéo & Contenu Digital",
         subTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        content:[]
+        content:[
+            "1171455531",
+            "1171455555",
+            "1171455502",
+        ],
+        format:"reel"
     },
     {
         title: "Mini Vlogs",
         subTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        content:[]
+        content:[
+            "1171455531",
+            "1171455555",
+            "1171455502",
+        ],
+        format:"reel"
     },
     {
         title: "Un-boxings",
         subTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        content:[]
+        content:[
+            "1171455531",
+            "1171455555",
+            "1171455502",
+        ],
+        format:"reel"
     },
     {
         title: "Photos",
         subTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        content:[]
-    },
+        content:[
+           "DSC01755.jpg",
+           "bg-image.jpg",
+           "DSC01818.jpg",
+           "DSC01826.jpg",
+           "DSC01844.jpg",
+           "bg-image-2.jpg",
+        ],
+        format:"galerie"
+    }
 ]

@@ -1,10 +1,11 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Inner from "./Inner";
 import Categorie from "./portfolio/Categorie";
 
 function Portfolio({categories}) {
     const categoriesRef = useRef([]);
     const menuRef = useRef(null);
+    const [activeIndex, setActiveIndex] = useState(0);
 
     useEffect(() => {
         const cards = categoriesRef.current.filter(Boolean);
@@ -14,21 +15,34 @@ function Portfolio({categories}) {
 
         // helper: set active
         function setActive(index) {
+            setActiveIndex(index);
             menuItems.forEach(li => li.classList.remove("active"));
             if (menuItems[index]) menuItems[index].classList.add("active");
         }
 
-        // 1) SCROLL SPY (100% in view)
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.intersectionRatio === 1) {
-                    const idx = cards.indexOf(entry.target);
-                    if (idx !== -1) setActive(idx);
+        // 1) SCROLL SPY - Utilise scroll event pour plus de précision
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+            let currentIndex = 0;
+            cards.forEach((card, index) => {
+                const rect = card.getBoundingClientRect();
+                const cardTop = rect.top + window.scrollY;
+                const cardBottom = cardTop + rect.height;
+
+                if (scrollPosition >= cardTop && scrollPosition <= cardBottom) {
+                    currentIndex = index;
                 }
             });
-        }, { threshold: 1 });
 
-        cards.forEach(card => observer.observe(card));
+            if (currentIndex !== activeIndex) {
+                setActive(currentIndex);
+            }
+        };
+
+        // Déclencher au montage et à chaque scroll
+        handleScroll();
+        window.addEventListener('scroll', handleScroll, { passive: true });
 
         // 2) CLICK TO SCROLL
         menuItems.forEach((li, i) => {
@@ -49,9 +63,9 @@ function Portfolio({categories}) {
 
         // Cleanup
         return () => {
-            cards.forEach(card => observer.unobserve(card));
+            window.removeEventListener('scroll', handleScroll);
         };
-    }, [categories]);
+    }, [categories, activeIndex]);
 
     return(
         <>
@@ -65,7 +79,7 @@ function Portfolio({categories}) {
                         <div>
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/NpEaa2P7qZI?si=ZDmo9kr3Wuixs7Ln" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         </div>
-                        <img className="scroll-gif" src={`/images/icons/down.gif`} />
+                        <img className="scroll-gif" src={`/images/icons/down.gif`} alt="Scroll down" />
                     </div>
                 </Inner>
 

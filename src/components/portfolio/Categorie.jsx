@@ -8,40 +8,30 @@ const Categorie = forwardRef(({categorie}, ref) => {
                 <div>
                     <h3 className="sub-section-title">{categorie.title}</h3>
                     <p>{categorie.subTitle}</p>
-                    <div className="categorie-content">
-                        <div>
-                            <iframe 
-                                width="315" 
-                                height="560" 
-                                src="https://youtube.com/shorts/pL4mDwgyEb8?si=p2tK1Sif9R8BMdFO" 
-                                title="YouTube Short" 
-                                frameBorder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowFullScreen>
-                            </iframe>
-                        </div>
-                        <div>
-                            <iframe 
-                                width="315" 
-                                height="560" 
-                                src="https://youtube.com/shorts/pL4mDwgyEb8?si=p2tK1Sif9R8BMdFO" 
-                                title="YouTube Short" 
-                                frameBorder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowFullScreen>
-                            </iframe>
-                        </div>
-                        <div>
-                            <iframe 
-                                width="315" 
-                                height="560" 
-                                src="https://youtube.com/shorts/pL4mDwgyEb8?si=p2tK1Sif9R8BMdFO" 
-                                title="YouTube Short" 
-                                frameBorder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowFullScreen>
-                            </iframe>
-                        </div>
+                    <div className={`categorie-content ${categorie.format}`}>
+                        {
+                            categorie.format === "reel" ?
+                                categorie.content.map((videoUrl, index) => (
+                                    <div key={index} className="video-wrapper">
+                                        <iframe
+                                                src={`https://player.vimeo.com/video/${videoUrl}?title=0&byline=0&portrait=0`}
+                                                width="100%"
+                                                height="100%"
+                                                frameBorder="0"
+                                                loading="lazy"
+                                                allow="autoplay; fullscreen; picture-in-picture"
+                                                allowFullScreen
+
+                                            ></iframe>
+                                    </div>
+                                )) : 
+                                categorie.content.map((imageUrl, index) => (
+                                    <div key={index} className="image-wrapper">
+                                        <img src={`/images/oumaima/${imageUrl}`}/>
+                                    </div>
+                                ))
+                        }
+                        
                     </div>
                 </div>
             </Inner>

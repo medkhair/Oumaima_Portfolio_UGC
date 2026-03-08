@@ -12,6 +12,7 @@ function App() {
       <Hero person={person} />
       <Services services={services} />
       <Portfolio categories={categoriesSections} />
+      <Services services={services} />
     </>
   )
 }
