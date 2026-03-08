@@ -28,13 +28,14 @@ function Footer({person}) {
                     <div className="footer-section">
                         <h4 className="footer-heading">Suivez-moi</h4>
                         <div className="footer-social">
-                            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="social-link">
+                            
+                            <a href="https://www.tiktok.com/@oumaimamahdidi_?_r=1&_t=ZS-94WK9ZyAU1E" target="_blank" rel="noopener noreferrer" className="social-link">
                                 <i className="bi bi-tiktok"></i>
                             </a>
-                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link">
+                            <a href="https://www.linkedin.com/in/oumaima-mahdidi/" target="_blank" rel="noopener noreferrer" className="social-link">
                                 <i className="bi bi-linkedin"></i>
                             </a>
-                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-link">
+                            <a href="https://www.instagram.com/oumaimamahdidi_?igsh=MXBxcWM5emNlZXFkMw==" target="_blank" rel="noopener noreferrer" className="social-link">
                                 <i className="bi bi-instagram"></i>
                             </a>
                         </div>

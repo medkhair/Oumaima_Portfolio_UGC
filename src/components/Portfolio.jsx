@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import Inner from "./Inner";
 import Categorie from "./portfolio/Categorie";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function Portfolio({categories}) {
     const categoriesRef = useRef([]);
@@ -8,6 +10,12 @@ function Portfolio({categories}) {
     const [activeIndex, setActiveIndex] = useState(0);
 
     useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-out'
+        });
+
         const cards = categoriesRef.current.filter(Boolean);
         const menuItems = menuRef.current ? Array.from(menuRef.current.querySelectorAll("li")) : [];
 
@@ -71,24 +79,40 @@ function Portfolio({categories}) {
         <>
             <section id="portfolio" className="portfolio">
                 <Inner className="section-header portfolio-section-header">
-                    <div>
+                    <div data-aos="fade-up">
                         <h2 className="section-title">Travaux récents sélectionnés</h2>
                         <p>
                             Une sélection de projets récents réalisés en direct ou en support agence.
                         </p>
-                        <div>
+                        <div data-aos="zoom-in" data-aos-delay="200">
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/NpEaa2P7qZI?si=ZDmo9kr3Wuixs7Ln" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         </div>
-                        <img className="scroll-gif" src={`/images/icons/down.gif`} alt="Scroll down" />
+                        <img 
+                            className="scroll-gif" 
+                            src={`/images/icons/down.gif`} 
+                            alt="Scroll down"
+                            data-aos="fade-down"
+                            data-aos-delay="400"
+                        />
                     </div>
                 </Inner>
 
                 <Inner className="portfolio-section-2">
-                    <div className="sticky-div categories">
+                    <div 
+                        className="sticky-div categories"
+                        data-aos="fade-right"
+                        data-aos-offset="100"
+                    >
                         <ul ref={menuRef}>
                             {
                                 categories.map((element, index) => (
-                                    <li key={index}>{element.title}</li>
+                                    <li 
+                                        key={index}
+                                        data-aos="fade-left"
+                                        data-aos-delay={index * 100}
+                                    >
+                                        {element.title}
+                                    </li>
                                 ))
                             }
                         </ul>

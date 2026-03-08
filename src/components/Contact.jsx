@@ -1,8 +1,11 @@
+import { useEffect } from "react";
 import Form from "../tools/Form";
 import Inner from "./Inner";
 import { useState } from "react";
 import emailjs from '@emailjs/browser';
 import { services } from "../services/data";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 function Contact({person}) {
@@ -16,6 +19,14 @@ function Contact({person}) {
     });
 
     const [status, setStatus] = useState("");
+
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-out'
+        });
+    }, []);
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -61,15 +72,28 @@ function Contact({person}) {
         
             <section id="contact" className="contact">
                 <Inner className="section-header">
-                    <div>
-                        <h2 className="section-title">Discutons de votre prochain projet</h2>
-                        <p>
+                    <div data-aos="fade-up">
+                        <h2 
+                            className="section-title"
+                            data-aos="fade-down"
+                            data-aos-delay="100"
+                        >
+                            Discutons de votre prochain projet
+                        </h2>
+                        <p 
+                            data-aos="fade-up"
+                            data-aos-delay="200"
+                        >
                             Réponse sous 24–48h ouvrées.
                         </p>
                     </div>
                 </Inner>
                 <Inner className="contact-details">
-                    <div className="form-group">
+                    <div 
+                        className="form-group"
+                        data-aos="zoom-in"
+                        data-aos-delay="300"
+                    >
                         <Form services={servicesName} form={form} setForm={setForm} onSubmit={onSubmit} status={status} />
                     </div>
                 </Inner>
