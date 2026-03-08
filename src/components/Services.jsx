@@ -16,7 +16,7 @@ function Services({services}){
                 </Inner>
                 <Inner className="services-list">
                     {services.map((service, index) => (
-                        <div id={index} className="service-item">
+                        <div key={index} id={index} className="service-item">
                             <img className={`service-icon ${service.icon}`} src={`/images/icons/${service.icon}`} />
                             <div>
                                 <h3 className="service-title">{service.name}</h3>

@@ -36,6 +36,7 @@
         background-color: var(--Medkhair-color-primary);
         color: #fff;
         line-height: 1.1;
+        scroll-behavior: smooth;
     }
 
     .inner {
@@ -96,6 +97,11 @@
     }
     .section-title{
         font-size: 46px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .sub-section-title{
+        font-size: 36px;
         text-align: center;
         margin-bottom: 10px;
     }
@@ -484,3 +490,94 @@
     }
 
 /***** End of Section 2 - Services  *****/
+
+
+/***** Section 3 - Portfolio *****/
+
+    #portfolio{
+        padding: 60px 0 60px;
+    }
+    #portfolio *{
+        color: var(--Medkhair-color-tercairy);
+    }
+    .categorie-header p{
+        font-size: 16px;
+    }
+    .categories-sections{
+        width: 70%;
+        flex: unset;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+    .categorie-content{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    .categorie-content > div{
+        width: 100%;
+        aspect-ratio: 9 / 16;
+    }
+    .categorie-content > div iframe{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
+    .portfolio-section-header > div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .portfolio-section-header div div{
+        width: fit-content;
+        overflow: hidden;
+        border-radius: 20px;
+        margin: 30px auto 10px;
+    }
+
+    .portfolio-section-header img{
+        margin: 0 auto 80px;
+        width: 80px;
+    }
+    .portfolio-section-2{
+        align-items: flex-start;
+    }
+    .sticky-div.categories{
+        position: sticky;
+        top: 20%;
+    }
+    .sticky-div.categories li{
+        margin-bottom: 15px;
+    }
+    .sticky-div.categories ul{
+        list-style-type: none;
+    }
+    .sticky-div.categories ul > li:not(.active){
+        color: var(--Medkhair-color-secondary) !important;
+    }
+    .sticky-div.categories ul > li{
+        position: relative;
+        font-weight: 500;
+        font-size: 18px;
+    }
+    .sticky-div.categories ul > li::before{
+        content: "";
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 50%;
+        left: -35px;
+        transform: translateY(-50%) translateX(-50%);
+        background-image: url(../public/images/icons/fast-forward.png);
+        background-position: center;
+        background-size: cover;
+        opacity: 0;
+        transition: all .4s ease;
+    }
+    .sticky-div.categories ul > li.active::before{
+        transform: translateY(-50%);
+        opacity: 1;
+    }
+
+/***** End of Section 3 - Portfolio *****/

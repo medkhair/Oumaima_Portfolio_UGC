@@ -23,3 +23,38 @@ export const services = [
         icon: "cogwheel.png"
     }
 ]
+
+
+export const portfolio = [
+
+];
+
+export const categories = [
+    "Projets Vidéo & Contenu Digital",
+    "Mini Vlogs",
+    "Un-boxings",
+    "Photos"
+];
+
+export const categoriesSections = [
+    {
+        title: "Projets Vidéo & Contenu Digital",
+        subTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        content:[]
+    },
+    {
+        title: "Mini Vlogs",
+        subTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        content:[]
+    },
+    {
+        title: "Un-boxings",
+        subTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        content:[]
+    },
+    {
+        title: "Photos",
+        subTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        content:[]
+    },
+]
