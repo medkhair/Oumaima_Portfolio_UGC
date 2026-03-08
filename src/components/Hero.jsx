@@ -9,7 +9,7 @@ function Hero({person}){
 
     const [text, count] = useTypewriter({
         words: [
-            person.firstName + " " + person.lastName,
+            "Hey, moi c’est "+ person.firstName + ", 22 ans ",
         ],
         loop: true,
         delaySpeed: 5000,

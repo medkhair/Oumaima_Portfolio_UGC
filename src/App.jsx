@@ -1,6 +1,7 @@
 
 import './App.css'
 import Contact from './components/Contact'
+import Footer from './components/Footer'
 import Hero from './components/Hero'
 import Portfolio from './components/portfolio'
 import Propos from './components/Propos'
@@ -16,6 +17,7 @@ function App() {
       <Portfolio categories={categoriesSections} />
       <Propos />
       <Contact person={person} />
+      <Footer person={person} /> 
     </>
   )
 }
