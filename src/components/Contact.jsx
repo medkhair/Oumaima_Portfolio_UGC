@@ -62,9 +62,9 @@ function Contact({person}) {
             <section id="contact" className="contact">
                 <Inner className="section-header">
                     <div>
-                        <h2 className="section-title">Get In Touch</h2>
+                        <h2 className="section-title">Discutons de votre prochain projet</h2>
                         <p>
-                            Feel free to reach out for collaborations or just a friendly hello!
+                            Réponse sous 24–48h ouvrées.
                         </p>
                     </div>
                 </Inner>
