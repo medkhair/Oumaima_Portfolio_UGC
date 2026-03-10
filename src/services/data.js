@@ -13,7 +13,7 @@ export const services = [
         icon: "creative.png"
     },
     {
-        name: "Création de contenu authentique",
+        name: "Contenu naturel et engageant",
         description: "Adapté aux réseaux sociaux (Instagram, TikTok, Facebook).",
         icon: "organic-search.png"
     },
@@ -48,16 +48,6 @@ export const categoriesSections = [
         format:"reel"
     },
     {
-        title: "Mini Vlogs",
-        subTitle: "Moments du quotidien transformés en récits courts et authentiques pour créer une connexion naturelle avec l’audience.",
-        content:[
-            "1171455531",
-            "1171455555",
-            "1171455502",
-        ],
-        format:"reel"
-    },
-    {
         title: "Un-boxings",
         subTitle: "Découvertes produits filmées pour mettre en valeur l’expérience, les détails et les premières impressions.",
         content:[
@@ -68,15 +58,20 @@ export const categoriesSections = [
         format:"reel"
     },
     {
+        title: "Mini Vlogs",
+        subTitle: "Moments du quotidien transformés en récits courts et authentiques pour créer une connexion naturelle avec l’audience.",
+        content:[
+            "1171977252"
+        ],
+        format:"reel"
+    },
+    {
         title: "Photos",
         subTitle: "Sélection de visuels mettant en avant l’esthétique, la mise en scène et l’identité des marques.",
         content:[
            "DSC01755.jpg",
-           "bg-image.jpg",
            "DSC01818.jpg",
            "DSC01826.jpg",
-           "DSC01844.jpg",
-           "bg-image-2.jpg",
         ],
         format:"galerie"
     }

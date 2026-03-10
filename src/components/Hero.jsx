@@ -32,11 +32,10 @@ function Hero({person}){
                     <div className="hero-content" data-aos="fade-right">
                         <h1 className="hero-title">{text} <span><Cursor/></span></h1>
                         <h2 className="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
-                            Creative Content Partner pour agences
+                            Créatrice de contenu UGC
                         </h2>
                         <p className="hero-description" data-aos="fade-up" data-aos-delay="400">
-                            J'accompagne les agences dans la conception et la production de contenu stratégique, 
-                            performant et parfaitement aligné aux standards de leurs clients.
+                            Je crée des vidéos UGC authentiques et engageantes qui mettent en valeur vos produits, racontent leur histoire et captivent votre audience. Je travaille main dans la main avec les agences pour transformer chaque idée en contenu efficace et mémorable.
                         </p>
                         <div className="hero-buttons" data-aos="fade-up" data-aos-delay="600">
                             <a className="button primary" href='#contact'>
