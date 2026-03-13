@@ -35,8 +35,8 @@ function Contact({person}) {
         try {
             // Replace with your EmailJS credentials
             const result = await emailjs.send(
-                'service_bk7ygra',      // Get from EmailJS dashboard
-                'template_taquakc',     // Get from EmailJS dashboard
+                'service_fje9p55',      // Get from EmailJS dashboard
+                'template_efepr6j',     // Get from EmailJS dashboard
                 {
                     from_name: form.name,
                     from_email: form.email,
@@ -45,7 +45,7 @@ function Contact({person}) {
                     message: form.message,
                     to_name: person.name, // Your name
                 },
-                'lUgUAsYr0CTdY8LtU'       // Get from EmailJS dashboard
+                'MhMKJpVqListekEfj'       // Get from EmailJS dashboard
             );
 
             console.log('Email sent successfully:', result.text);
