@@ -11,7 +11,7 @@ function Form({services, form, setForm, onSubmit, status}) {
            </div>
             <div className="form-group phone">
                 <label htmlFor="phone">Numéro de Téléphone</label>
-                <input type="tel" id="phone" name="phone" placeholder="+33 6 12 34 56 78" value={form.phone} onChange={(e)=>{setForm({...form, phone: e.target.value})}} required />
+                <input type="tel" id="phone" name="phone" placeholder="+212 6 12 34 56 78" value={form.phone} onChange={(e)=>{setForm({...form, phone: e.target.value})}} required />
            </div>
            <div className="form-group service-type">
                 <label htmlFor="service-type">Type de Service</label>

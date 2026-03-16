@@ -66,12 +66,12 @@ export const categoriesSections = [
         format:"reel"
     },
     {
-        title: "Photos",
+        title: "Mes photos UCG & lifestyle",
         subTitle: "Sélection de visuels mettant en avant l’esthétique, la mise en scène et l’identité des marques.",
         content:[
-           "DSC01755.jpg",
+           "DSC01755-min.webp",
            "DSC01818.jpg",
-           "DSC01826.jpg",
+           "DSC01826_compressed.webp",
         ],
         format:"galerie"
     }

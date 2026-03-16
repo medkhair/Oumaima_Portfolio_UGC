@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import Inner from "./Inner";
 import Categorie from "./portfolio/Categorie";
 import AOS from 'aos';
@@ -7,7 +7,18 @@ import 'aos/dist/aos.css';
 function Portfolio({categories}) {
     const categoriesRef = useRef([]);
     const menuRef = useRef(null);
+    const activeIndexRef = useRef(-1);
     const [activeIndex, setActiveIndex] = useState(0);
+
+    const setActive = useCallback((index) => {
+        if (activeIndexRef.current === index) return;
+        activeIndexRef.current = index;
+        setActiveIndex(index);
+
+        const menuItems = menuRef.current ? Array.from(menuRef.current.querySelectorAll("li")) : [];
+        menuItems.forEach(li => li.classList.remove("active"));
+        if (menuItems[index]) menuItems[index].classList.add("active");
+    }, []);
 
     useEffect(() => {
         AOS.init({
@@ -15,44 +26,64 @@ function Portfolio({categories}) {
             once: true,
             easing: 'ease-out'
         });
+    }, []);
 
+    useEffect(() => {
         const cards = categoriesRef.current.filter(Boolean);
         const menuItems = menuRef.current ? Array.from(menuRef.current.querySelectorAll("li")) : [];
 
         if (!cards.length || !menuItems.length) return;
 
-        // helper: set active
-        function setActive(index) {
-            setActiveIndex(index);
-            menuItems.forEach(li => li.classList.remove("active"));
-            if (menuItems[index]) menuItems[index].classList.add("active");
-        }
+        // Activer le premier élément au montage
+        setActive(0);
 
-        // 1) SCROLL SPY - Utilise scroll event pour plus de précision
         const handleScroll = () => {
-            const scrollPosition = window.scrollY + window.innerHeight / 2;
+            const cards = categoriesRef.current.filter(Boolean);
+            if (!cards.length) return;
 
-            let currentIndex = 0;
+            const viewportMiddle = window.scrollY + window.innerHeight / 2;
+            const portfolioSection = document.getElementById('portfolio');
+            
+            if (!portfolioSection) return;
+
+            const portfolioRect = portfolioSection.getBoundingClientRect();
+            const portfolioTop = portfolioRect.top + window.scrollY;
+            const portfolioBottom = portfolioTop + portfolioRect.height;
+
+            // Si on n'est pas dans la section portfolio, ne rien faire
+            if (viewportMiddle < portfolioTop || viewportMiddle > portfolioBottom) return;
+
+            // Trouver la section la plus proche du centre de l'écran
+            let closestIndex = 0;
+            let closestDistance = Infinity;
+
             cards.forEach((card, index) => {
                 const rect = card.getBoundingClientRect();
-                const cardTop = rect.top + window.scrollY;
-                const cardBottom = cardTop + rect.height;
+                const cardCenter = rect.top + rect.height / 2;
+                const screenCenter = window.innerHeight / 2;
+                const distance = Math.abs(cardCenter - screenCenter);
 
-                if (scrollPosition >= cardTop && scrollPosition <= cardBottom) {
-                    currentIndex = index;
+                if (distance < closestDistance) {
+                    closestDistance = distance;
+                    closestIndex = index;
                 }
             });
 
-            if (currentIndex !== activeIndex) {
-                setActive(currentIndex);
+            // Vérifier si on a scrollé au-delà de la dernière section
+            const lastCard = cards[cards.length - 1];
+            const lastRect = lastCard.getBoundingClientRect();
+            if (lastRect.bottom <= window.innerHeight) {
+                closestIndex = cards.length - 1;
             }
+
+            setActive(closestIndex);
         };
 
-        // Déclencher au montage et à chaque scroll
         handleScroll();
         window.addEventListener('scroll', handleScroll, { passive: true });
 
-        // 2) CLICK TO SCROLL
+        // CLICK TO SCROLL
+        const clickHandlers = [];
         menuItems.forEach((li, i) => {
             li.style.cursor = "pointer";
             const handleClick = (e) => {
@@ -62,18 +93,22 @@ function Portfolio({categories}) {
 
                 target.scrollIntoView({
                     behavior: "smooth",
-                    block: "start"
+                    block: "center"
                 });
                 setActive(i);
             };
             li.addEventListener("click", handleClick);
+            clickHandlers.push({ li, handleClick });
         });
 
         // Cleanup
         return () => {
             window.removeEventListener('scroll', handleScroll);
+            clickHandlers.forEach(({ li, handleClick }) => {
+                li.removeEventListener("click", handleClick);
+            });
         };
-    }, [categories, activeIndex]);
+    }, [categories, setActive]);
 
     return(
         <>
