@@ -10,7 +10,7 @@ function Footer({person}) {
                     <div className="footer-section">
                         <h3 className="footer-title">{person.firstName} {person.lastName}</h3>
                         <p className="footer-description">
-                            Creative Content Partner pour agences
+                            Créatrice de contenu UGC
                         </p>
                     </div>
                     
