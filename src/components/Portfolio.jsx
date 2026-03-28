@@ -119,8 +119,27 @@ function Portfolio({categories}) {
                         <p>
                             Une sélection de projets récents réalisés en direct ou en support agence.
                         </p>
-                        <div data-aos="zoom-in" data-aos-delay="200">
+                        <div className="video" data-aos="zoom-in" data-aos-delay="200">
+                            {
+                                /* 
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/NpEaa2P7qZI?si=ZDmo9kr3Wuixs7Ln" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+
+                            */
+                            }
+
+                            <a
+                            className="button secondary"
+                            href="#portfolio-section-2"
+                            onClick={e => {
+                                e.preventDefault();
+                                const section = document.getElementById('portfolio-section-2');
+                                if (section) {
+                                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                }
+                            }}
+                            >
+                            Voir mes projets
+                            </a>
                         </div>
                         <img 
                             className="scroll-gif" 
@@ -132,7 +151,7 @@ function Portfolio({categories}) {
                     </div>
                 </Inner>
 
-                <Inner className="portfolio-section-2">
+                <Inner className="portfolio-section-2" >
                     <div 
                         className="sticky-div categories"
                         data-aos="fade-right"
@@ -152,7 +171,7 @@ function Portfolio({categories}) {
                             }
                         </ul>
                     </div>
-                    <div className="categories-sections">
+                    <div className="categories-sections"  id="portfolio-section-2" >
                         {
                             categories.map((element, index) => (
                                 <Categorie 

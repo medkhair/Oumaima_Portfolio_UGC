@@ -43,17 +43,23 @@ export const categoriesSections = [
         content:[
             "1171455531",
             "1171455555",
-            "1171455502",
+            "1177864720",
+
+            "1177864766",
+            "1177864814",
+            "1177864906",
+
+            "1177864964"
+            
         ],
         format:"reel"
     },
     {
-        title: "Un-boxings",
+        title: "Découvertes & Tests",
         subTitle: "Découvertes produits filmées pour mettre en valeur l’expérience, les détails et les premières impressions.",
         content:[
-            "1171455531",
             "1171455555",
-            "1171455502",
+            "1177864766"
         ],
         format:"reel"
     },
